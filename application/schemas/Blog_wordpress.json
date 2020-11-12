@@ -1,0 +1,14 @@
+
+"Schema":{
+	
+	"Model": "BlogWordpress",
+
+	"Belongsto":"Usuarios",
+
+	"hasmany":{
+		"table":"blog_scrapper",
+		"model":""
+	},
+
+	"table":"blog_wordpress"
+}

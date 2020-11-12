@@ -1,0 +1,11 @@
+"Schema":{
+	
+	"Model": "Usuarios",
+
+	"Belongsto":"",
+
+	"hasmany":{
+		"table":"blog_wordpress",
+		"model":"BlogWordpress"
+	}
+}

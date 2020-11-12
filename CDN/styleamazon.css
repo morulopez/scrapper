@@ -1,0 +1,143 @@
+ .divdescription{
+            margin-top: 40px;
+            min-height: 250px;
+            max-height: 250px;
+        }
+        
+        .description{
+            color:#7d7777;
+        }
+        .divprecio{
+            margin-top: 50px;
+        }
+        .global{
+            background: #d1d1d1;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+        .spanprecio{
+           font-size: 12px;
+        }
+        .conta{
+            margin:50px;
+        }
+        .buton-push-amazon{
+            display:inline-block;
+        }
+        .inside-product-amazon{
+            text-decoration: none;
+            padding:15px;
+            border: 2px solid #ebebeb;
+            border-radius: 5px;
+            cursor:pointer;
+            margin-top:10px;
+            min-height: 700px;
+            max-height: 700px;
+            pointer-events: none;
+        }
+        .divimg{
+            min-height: 300px;
+            max-height: 300px;
+        }
+        .inside:hover{
+            opacity: 0.6;
+        }
+        .inside a{
+            text-decoration: none;
+            color:#7d7777;
+        }
+        .button-select-product{
+            margin:10px;
+            width: 100%;
+            border-radius:4px;
+            cursor:pointer;
+            background-color: #2a3e57;
+            color:#fff;
+            margin-right: 4px;
+        }
+        .button-selected-product,.button-selected-product-dialy{
+            margin:10px;
+            width: 100%;
+            border-radius:4px;
+            cursor:pointer;
+            background-color: #698c7c;
+            color:#fff;
+            margin-right: 4px;
+        }
+        .divimg img{
+            max-width: 100%;
+            max-height: 100%;
+            margin-top: 20px;
+        }
+        .pages-amazon{
+            font-size:11px;
+            cursor:pointer;
+            border:1px solid #9fcad1;
+            padding:10px;
+            margin:4px;
+            border-radius:4px;
+        }
+        .page-selected{
+            background-color:#9fcad1;
+        }
+        .content-amazon,.all-content-amazon{
+            display:none;
+            padding:10px;
+            border-radius:4px;
+            border:1px solid #9fcad1;
+            margin-left:30px;
+            margin-right:10px;
+            margin-top: 30px;
+        }
+        .content-amazon-selected{
+            visibility: hidden;
+            border:1px solid #0c5c28;
+            margin-top: 30px;
+            padding:10px;
+            border-radius:4px;
+        }
+        .boton-get-productos{
+            background-color: #92b39e;
+            border-radius:4px;
+            padding:5px;
+            display: block;
+            cursor:pointer;
+            text-align:center;
+            font-size:12px;
+            margin-top: 3px;
+            color:#d9d9d9;
+        }
+        .scrapper-product-animation{
+            animation: intermitent 0.3s infinite;
+        }
+        .button-reset-product,.button-create-page{
+           border:1px solid #404040!important;
+           color:#404040!important;
+           background-color:#c9c9c9!important;
+        }
+        .close-modal-content{
+           margin:10px;
+           cursor: pointer;
+           color:#404040!important;
+           background-color:#c9c9c9!important;
+           border-radius:10px;
+        }
+         .button-reset-product:hover{
+            color:#c9c9c9!important;
+            background-color:#404040!important;
+         }
+        .first-div-amazon-content{
+            border: 1px solid #e3e3e3;
+            margin:20px!important;
+            padding: 30px;
+        } 
+        @keyframes intermitent{
+            from {opacity:0.2;}
+            to   {opacity:1;}
+        }
+        @media only screen and (min-device-width : 250px) and (max-device-width : 1400px){
+            .conta{
+                margin:2px;
+            }
+        }

@@ -1,0 +1,14 @@
+
+"Schema":{
+	
+	"Model": "FacebookModel",
+
+	"Belongsto":"blog_wordpress",
+
+	"hasmany":{
+		"table":"usuarios",
+		"model":"UsuariosModel"
+	},
+
+	"table":"facebook_fan_page"
+}
