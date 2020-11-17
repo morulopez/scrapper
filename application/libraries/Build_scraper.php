@@ -506,6 +506,50 @@ class Build_scraper{
 		}
 		return;
     }
+
+    function scrapperBlogPusblished($url){
+		
+		$html = file_get_html($url);
+
+		$title = $html->find("title",0)->plaintext;
+
+
+		foreach ($html->find('meta') as $meta) {
+			if($meta->name=="description") $description = $meta->content;
+		}
+
+		foreach($html->find('link') as $link){
+		    if($link->rel=='icon') $urlIcon = $link->href;
+		}
+
+		$imageUrl = $html->find('img')[1]->src;
+		$imageUrlShort  = $this->buildUrl($imageUrl);
+
+		return [
+				"urlblog"=>$url,
+				"urlicon"=>$urlIcon,
+				"urlimagen"=>$imageUrl,
+				"urlimagenshort"=>$imageUrlShort,
+				"title"=>$title,
+				"summary"=>$description,
+				"date"=>NOW()
+			];
+    }
+    function buildUrl($url){
+	    $urlblog = explode("/",$url);
+	    $urlblogBuild = '';
+	    $keys = array_keys($urlblog);
+	    foreach($urlblog as $key => $partUrl){
+
+	        if($key === end($keys)){
+	            $urlblogBuild.=$partUrl;
+	        }
+	        else{
+	            $urlblogBuild.=$partUrl.'\/';
+	        }
+	    }
+    	return $urlblogBuild;
+	}
 }
 
 ?>

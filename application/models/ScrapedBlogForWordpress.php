@@ -127,6 +127,11 @@ class ScrapedBlogForWordpress extends CI_Model{
 		return true;
 	}
 
+	public function insertContenidoBlog($dataBlog){
+		$this->db->insert("contenido_publicado_en_blog",$dataBlog);
+		return true;
+	}
+
 	//Funcion para obtener todos los scrapeados diarios***/
 
 	public function get_all_daily_scraped(){

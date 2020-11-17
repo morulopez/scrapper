@@ -260,6 +260,8 @@ class Scrapper extends CI_Controller {
 		$result = json_decode($result);
 		curl_close($ch);
 
+		$dataBlog = $this->build_scraper->getscraper($result->guid->rendered);
+		$this->ScrapedBlogForWordpress->insertContenidoBlog($dataBlog);
 		return true;
 
 	}
@@ -307,6 +309,7 @@ class Scrapper extends CI_Controller {
 			return;
 		}
 	}
+
 }
 
 
