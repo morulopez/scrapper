@@ -12,9 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
-define("CDN","http://localhost/scrapperTrooll/CDN");
-define("IMGPATH","http://localhost/scrapperTrooll/application/controllers/");
-define("PATHVIDEO","http://localhost/scrapperTrooll/application/controllers/videos/");
+define("CDN","http://vps-8254de4f.vps.ovh.net/CDN");
+define("IMGPATH","http://vps-8254de4f.vps.ovh.net/application/controllers/");
+define("PATHVIDEO","http://vps-8254de4f.vps.ovh.net/application/controllers/videos/");
 
 /*
 |--------------------------------------------------------------------------

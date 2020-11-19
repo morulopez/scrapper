@@ -81,7 +81,7 @@ class images extends general{
     document.getElementsByClassName("boxquestion")[0].style.background="transparent"
       var content = `<h1 class="h1download">DESCARGANDO IMAGENES.......</h1>`;
       this.showModal(content);
-      fetch(`${this.url}scrapperimg/downloadImagesForEdit`,{
+      fetch(`${this.url}ScrapperImg/downloadImagesForEdit`,{
       method:"POST",
       body:JSON.stringify({img:this.imagesOtherSelected}),
       headers:{
@@ -126,7 +126,7 @@ class images extends general{
       let arrayImages = this.imagesSelected.concat(this.imagesOtherSelected);
       this.showModal(content);
       
-      fetch(`${this.url}scrapperimg/downloadImagesForEdit`,{
+      fetch(`${this.url}ScrapperImg/downloadImagesForEdit`,{
       method:"POST",
       body:JSON.stringify({img:arrayImages}),
       headers:{
@@ -198,7 +198,7 @@ class images extends general{
     /****funcion para escrapear imagenes para fanpage y para otherimages***/
     download(funtionname = 'downloadImages()',iDdata){
       if(document.getElementById(iDdata).value=="") return;
-      fetch(`${this.url}scrapper/getotherimages`,{
+      fetch(`${this.url}Scrapper/getotherimages`,{
             method:"POST",
             body:"titleimage="+document.getElementById(iDdata).value,
             headers:{
@@ -256,7 +256,7 @@ class images extends general{
       document.getElementById("emerg").style.display="none";
       document.getElementById("makeimages").style.display="none";
       document.getElementById("makeimages").innerHTML="";
-      fetch(`${this.url}scrapperimg/removeimage`,{
+      fetch(`${this.url}ScrapperImg/removeimage`,{
         method:"POST",
         body:"src="+src,
         headers:{
@@ -330,7 +330,7 @@ class images extends general{
       }
       let idimage =  Math.round(Math.random()*100000000);
       document.getElementById("emerg").style.display="none";
-      fetch(`${this.url}scrapperimg/removeAllchanges`,{
+      fetch(`${this.url}ScrapperImg/removeAllchanges`,{
         method:"POST",
         body:"image="+img,
         headers:{
@@ -339,7 +339,7 @@ class images extends general{
         }
       }).then(data=>{
         data.json().then(images=>{
-          document.getElementById(`imageneshow${ this.keyimages}`).src=`http://localhost/scrapperTrooll/application/controllers/${images}?id=${idimage}`;
+          document.getElementById(`imageneshow${ this.keyimages}`).src=`http://vps-8254de4f.vps.ovh.net/application/controllers/${images}?id=${idimage}`;
         })
       })
     })
@@ -438,7 +438,7 @@ class images extends general{
     url+="&numberTextValues="+this.moretextCount[this.keyimages];
     url+="&image="+img;
     let idimage =  Math.round(Math.random()*100000000);
-    fetch(`${this.url}scrapperimg/textimagen`,{
+    fetch(`${this.url}ScrapperImg/textimagen`,{
         method:"POST",
         body:url,
         headers:{
@@ -447,7 +447,7 @@ class images extends general{
         }
     }).then(data=>{
         data.json().then(dat=>{
-             document.getElementById('imageneshow'+this.keyimages).src=`http://localhost/scrapperTrooll/application/controllers/imgmade/${dat.img}?id=${idimage}`;
+             document.getElementById('imageneshow'+this.keyimages).src=`http://vps-8254de4f.vps.ovh.net/application/controllers/imgmade/${dat.img}?id=${idimage}`;
         })
     })
    }
@@ -607,7 +607,7 @@ class images extends general{
         return html;
   }
   cloneElement(newnumber,keyimages){
-    fetch(`${this.url}scrapperimg/getDirectory`).then(directories=>{
+    fetch(`${this.url}ScrapperImg/getDirectory`).then(directories=>{
         directories.json().then(images=>{
           var imagesfont = images.imagesfont;
           var files      = images.filesfont;

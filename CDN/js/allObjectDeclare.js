@@ -1,5 +1,5 @@
  
- let url             = "http://localhost/scrapperTrooll/";
+ let url             = "http://vps-8254de4f.vps.ovh.net/";
  
  const object = {};
  if(typeof scrapper 	 === 'function'){ object.Scraper  	  = new scrapper(url);}
@@ -9,7 +9,7 @@
  if(typeof scraped_dialy === 'function'){ object.ScrapedDialy = new scraped_dialy(url);}
  if(typeof amazon		 === 'function'){ object.Amazon		  = new amazon(url);}
 
-if(window.location.pathname!="/scrapperTrooll/login"){
+if(window.location.pathname!="/login"){
 	
 	 promiseForcheck();
 	 let check = setInterval(()=>{
@@ -50,6 +50,7 @@ if(window.location.pathname!="/scrapperTrooll/login"){
 	    				window.location==`${url}Usuarios/closeSesion`;
 	    			}else{
 	    				document.getElementById('modalexpiredsesion').style.display="none";
+
 				 		document.getElementById('modalexpiredsesion').innerHTML='';
 				 		let check = setInterval(()=>{
 						 	 promiseForcheck(check);

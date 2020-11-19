@@ -40,7 +40,7 @@ class scrapper extends general{
         }
         $urlAmano=false
       }
-      fetch(`${this.url}scrapper/getscraper`,{
+      fetch(`${this.url}Scrapper/getscraper`,{
         method:"POST",
         body:JSON.stringify(obj),
         headers:{
@@ -155,7 +155,7 @@ class scrapper extends general{
       var div = document.getElementById('contentScrapper');
       div.classList.remove("contentScrapper");
       div.innerHTML="";
-    fetch(`${this.url}scrapper/getscraperwhitdFilter`,{
+    fetch(`${this.url}Scrapper/getscraperwhitdFilter`,{
       method:"POST",
       body:JSON.stringify(obj),
       headers:{
@@ -192,7 +192,7 @@ class scrapper extends general{
        return;
     })
     document.getElementById("yesback").addEventListener("click",()=>{
-      fetch(`${this.url}scrapperimg/removeAllimages`,{
+      fetch(`${this.url}ScrapperImg/removeAllimages`,{
           method:"POST",
           body:"removeallimg="+true,
           headers:{
@@ -329,7 +329,7 @@ class scrapper extends general{
       formData.append("filteramano",obj);
       formData.append("saveTileForcheck",this.saveTileForcheck);
 
-       fetch(`${this.url}scrapper/saveDataBlog`,{
+       fetch(`${this.url}Scrapper/saveDataBlog`,{
         method:"POST",
         body:formData
       }).then(response=>{

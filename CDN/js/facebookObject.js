@@ -307,7 +307,7 @@ function checkCookie(cookiename) {
 
 /*funcion que muestra una ventana modal para crear la fanpage*/
 function newFanpage(){
-    fetch(`http://localhost/scrapperTrooll/controllermodal/modalNewFanPage`)
+    fetch(`http://vps-8254de4f.vps.ovh.net/Controllermodal/modalNewFanPage`)
     .then(dataModal=>{
       dataModal.json().then(modal=>{
         document.getElementById('parentmodalInsertBlog').style.display="block";
@@ -318,7 +318,7 @@ function newFanpage(){
 
 /*funcion que muestra una ventana modal para crear la fanpage*/
 function updateSessionFacebook(){
-    fetch(`http://localhost/scrapperTrooll/controllermodal/modalupdateSessionFacebbok`)
+    fetch(`http://vps-8254de4f.vps.ovh.net/Controllermodal/modalupdateSessionFacebbok`)
     .then(dataModal=>{
       dataModal.json().then(modal=>{
         document.getElementById('parentmodalupdateSession').style.display="block";
@@ -328,7 +328,7 @@ function updateSessionFacebook(){
 }
 
 function insertgroupFacebook(){
-    fetch(`http://localhost/scrapperTrooll/controllermodal/insertgroupFacebook`)
+    fetch(`http://vps-8254de4f.vps.ovh.net/Controllermodal/insertgroupFacebook`)
     .then(dataModal=>{
       dataModal.json().then(modal=>{
         document.getElementById('parentmodalInsertBlog').style.display="block";
@@ -338,7 +338,7 @@ function insertgroupFacebook(){
 }
 
 function updateSession(){
-     fetch(`http://localhost/scrapperTrooll/Facebook/updateSessionFacebook`,{
+     fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/updateSessionFacebook`,{
         method:"POST",
         body:`datr=${document.getElementById('datr').value}&sb=${document.getElementById('sb').value}&m_pixel=${document.getElementById('m_pixel').value}&_fbp=${document.getElementById('_fbp').value}&locale=${document.getElementById('locale').value}&spin=${document.getElementById('spin').value}&c_user=${document.getElementById('m_pixel').value}&xs=${document.getElementById('xs').value}&fr=${document.getElementById('fr').value}&presence=${document.getElementById('presence').value}&wd=${document.getElementById('locale').value}&x_referer=${document.getElementById('x_referer').value}`,
         headers:{
@@ -361,7 +361,7 @@ function crearNewfanpage(){
         document.getElementById("diverror").innerHTML = "<span class='error'><i class='fas fa-exclamation'></i> Tienes que rellenar todos los campos</span>";
         return;
     }
-    fetch(`http://localhost/scrapperTrooll/Facebook/NewFanPage`,{
+    fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/NewFanPage`,{
         method:"POST",
         body:`name=${document.getElementById('namefanpage').value}&id_fanpage=${document.getElementById('idfanpage').value}&key=${document.getElementById('secretkey').value}&blog=${document.getElementById('selectblogfanpage').value}`,
         headers:{
@@ -384,7 +384,7 @@ function crearNewGroup(){
         document.getElementById("diverror").innerHTML = "<span class='error'><i class='fas fa-exclamation'></i> Tienes que rellenar todos los campos</span>";
         return;
     }
-    fetch(`http://localhost/scrapperTrooll/Facebook/NewGroup`,{
+    fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/NewGroup`,{
         method:"POST",
         body:`name=${document.getElementById('groupname').value}&id_group=${document.getElementById('idgroup').value}&blog=${document.getElementById('selectblogfanpage').value}`,
         headers:{
@@ -403,7 +403,7 @@ function crearNewGroup(){
 
 /*funcion para obtener todas las fanpages*/
 function get_all_fan_pages(){
-    fetch(`http://localhost/scrapperTrooll/Facebook/getAll`)
+    fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/getAll`)
     .then(data=>{
       data.json().then(res=>{
         makeheadtable(res);
@@ -458,7 +458,7 @@ function changeInput(id,idfanpage){
         document.getElementById(`update${id}`).style.display      = "none";
         document.getElementById(`finger${id}`).addEventListener('click',()=>{
 
-            fetch(`http://localhost/scrapperTrooll/Facebook/updateFanpage`,{
+            fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/updateFanpage`,{
               method:"POST",
               body:`idfanpage=${idfanpage}&new_name=${document.getElementById("newname"+id).value}&newid=${document.getElementById("newid"+id).value}&newkey=${document.getElementById("newkey"+id).value}`,
               headers:{
@@ -626,11 +626,11 @@ function makeheadtable(data){
    }
 
    function downloadSrcYoutube(type){
-         var pathaudio = 'http://localhost/scrapperTrooll/application/controllers/videos/';
+         var pathaudio = 'http://vps-8254de4f.vps.ovh.net/application/controllers/videos/';
          var content = `<h1 class="h1download">Descargando ${type} de Youtube.......</h1>`;
          document.getElementsByClassName("boxquestion")[0].style.background="transparent";
          showModal(content);
-         fetch(`http://localhost/scrapperTrooll/Facebook/downloadyoutube`,{
+         fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/downloadyoutube`,{
             method:"POST",
             body:"urlyoutube="+document.getElementById("titleYoutube").value+"&type="+type,
             headers:{
@@ -722,7 +722,7 @@ function makeheadtable(data){
    /*Funcion para borrar audio descargado de youtube*/
 
    function deleteaudio(src){
-    fetch(`http://localhost/scrapperTrooll/Facebook/removeDownLoadYoutube`,{
+    fetch(`http://vps-8254de4f.vps.ovh.net/Facebook/removeDownLoadYoutube`,{
         method:"POST",
         body:"src="+src,
         headers:{

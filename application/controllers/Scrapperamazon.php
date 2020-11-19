@@ -28,4 +28,5 @@ class Scrapperamazon extends CI_Controller {
 			return;
 		}
 	}
+
 }

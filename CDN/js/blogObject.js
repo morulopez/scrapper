@@ -31,9 +31,9 @@ class blog extends general{
 		fetch(`${this.url}Misblogs/get_blogs`)
 		.then(dataBlogs =>{
 			dataBlogs.json().then(data=>{
-				if(window.location.pathname=="/scrapperTrooll/mis-blogs"){
+				if(window.location.pathname=="/mis-blogs"){
 					this.makeViewMisBlogs(data)
-				}else if(window.location.pathname=='/scrapperTrooll/'){
+				}else if(window.location.pathname=='/'){
 					this.makeSelect(data)
 				}
 			})
@@ -137,7 +137,7 @@ class blog extends general{
 	
   	 /**Funcion para cargar el html a una ventana modal para posteriormente insertar un blog nuevo */
 	newBlog(){
-	   fetch(`${this.url}controllermodal/newblogmodal`)
+	   fetch(`${this.url}Controllermodal/newblogmodal`)
 	    .then(dataModal=>{
 	      dataModal.json().then(modal=>{
 	        document.getElementById('parentmodalInsertBlog').style.display="block";

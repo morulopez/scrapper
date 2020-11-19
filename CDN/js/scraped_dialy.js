@@ -443,7 +443,7 @@ class scraped_dialy extends general{
      /****funcion para escrapear imagenes para fanpage y para otherimages***/
     download(iDdata,primerakey,segundakey,idPrecontent){
         if(document.getElementById(iDdata).value=="") return;
-        fetch(`${this.url}scrapper/getotherimages`,{
+        fetch(`${this.url}Scrapper/getotherimages`,{
             method:"POST",
             body:"titleimage="+document.getElementById(iDdata).value,
             headers:{
@@ -515,7 +515,7 @@ class scraped_dialy extends general{
           let arrayImages = this.imagesSelected[primerakey][segundakey].concat(this.imagesOtherSelected[primerakey][segundakey]);
           this.showModal(content);
           
-          fetch(`${this.url}scrapperimg/downloadImagesForEditDialy`,{
+          fetch(`${this.url}ScrapperImg/downloadImagesForEditDialy`,{
           method:"POST",
           body:JSON.stringify({img:arrayImages,primerakey:primerakey,segundakey:segundakey}),
           headers:{
@@ -562,7 +562,7 @@ class scraped_dialy extends general{
             document.getElementById("emerg").style.display="none";
             document.getElementById("makeimages"+primerakey+"-"+segundakey).style.display="none";
             document.getElementById("makeimages"+primerakey+"-"+segundakey).innerHTML="";
-            fetch(`${this.url}scrapperimg/removeimageDialy`,{
+            fetch(`${this.url}ScrapperImg/removeimageDialy`,{
                 method:"POST",
                 body:"src="+src+"&primerakey="+primerakey+"&segundakey="+segundakey,
                 headers:{
@@ -639,7 +639,7 @@ class scraped_dialy extends general{
         }
         let idimage =  Math.round(Math.random()*100000000);
         document.getElementById("emerg").style.display="none";
-        fetch(`${this.url}scrapperimg/removeAllchangesDialy`,{
+        fetch(`${this.url}ScrapperImg/removeAllchangesDialy`,{
             method:"POST",
             body:"image="+img+"&primerakey="+primerakey+"&segundakey="+segundakey,
             headers:{
@@ -882,7 +882,7 @@ class scraped_dialy extends general{
       formData.append("img",img);
       formData.append("saveTileForcheck",this.saveTileForcheck);
 
-       fetch(`${this.url}scrapper/saveDataBlogDialy`,{
+       fetch(`${this.url}Scrapper/saveDataBlogDialy`,{
         method:"POST",
         body:formData
       }).then(response=>{
@@ -981,7 +981,7 @@ class scraped_dialy extends general{
         url+=`&primerakey=${primerakey}`;
         url+=`&segundakey=${segundakey}`;
         let idimage =  Math.round(Math.random()*100000000);
-        fetch(`${this.url}scrapperimg/textimagen`,{
+        fetch(`${this.url}ScrapperImg/textimagen`,{
             method:"POST",
             body:url,
             headers:{
@@ -1141,7 +1141,7 @@ class scraped_dialy extends general{
         return html;
     }
     cloneElement(newnumber,primerakey,segundakey){
-        fetch(`${this.url}scrapperimg/getDirectory`).then(directories=>{
+        fetch(`${this.url}ScrapperImg/getDirectory`).then(directories=>{
             directories.json().then(images=>{
               var imagesfont = images.imagesfont;
               var files      = images.filesfont;

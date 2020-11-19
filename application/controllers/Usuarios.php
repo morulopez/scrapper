@@ -13,23 +13,24 @@ class Usuarios extends CI_Controller {
 	}
 	function Login_token(){
 		if(!empty($this->input->post("user"))){
-			$check = $this->UsuariosModel->login($this->input->post("user"),$this->input->post("pass"));
-			if($check){
-				$this->load->library('Sesion_token');
-				$jwt = $this->sesion_token->make_sesion_token();
-				$this->session->set_userdata([
-					"token"    => $jwt,
-					"ID"       => $check['ID'],
-					"exp"      => time() + 3600,
-					"username" => $check['name']
-				]);
-				echo json_encode($check);
-				return;
-			}else{
-				echo json_encode("error");
-				return;
-			}
-		}
+                        $check = $this->UsuariosModel->login($this->input->post("user"),$this->input->post("pass"));
+                        if($check){
+                                $this->load->library('Sesion_token');
+                                $jwt = $this->sesion_token->make_sesion_token();
+                                $this->session->set_userdata([
+                                        "token"    => $jwt,
+                                        "ID"       => $check['ID'],
+                                        "exp"      => time() + 3600,
+                                        "username" => $check['name']
+                                ]);
+                                echo json_encode($check);
+                                return;
+                        }else{
+                                echo json_encode("error");
+                                return;
+                        }
+                }
+
 	}
 	function renovetoken(){
 		if(!empty($this->input->post("user"))){
@@ -52,6 +53,8 @@ class Usuarios extends CI_Controller {
 	}
 
 	function check_token(){
+        $this->load->model("UsuariosModel");
+
 		if($this->input->post('check')){
 			$this->load->library('Sesion_token');
 			$valido = $this->sesion_token->get_token($this->session->userdata['token']);
